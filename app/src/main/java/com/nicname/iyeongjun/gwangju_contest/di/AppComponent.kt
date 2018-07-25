@@ -2,14 +2,24 @@ package com.nicname.iyeongjun.gwangju_contest.di
 
 import android.content.Context
 import com.nicname.iyeongjun.gwangju_contest.GwangjuApplication
+import com.nicname.iyeongjun.gwangju_contest.di.mod.global.ApiModule
+import com.nicname.iyeongjun.gwangju_contest.di.mod.activites.ActivityBinder
+import com.nicname.iyeongjun.gwangju_contest.di.mod.global.DriverModule
+import com.nicname.iyeongjun.gwangju_contest.di.mod.global.LocalModule
 import dagger.BindsInstance
 import dagger.Component
-import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
+import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = arrayOf(AndroidInjectionModule::class))
+@Component(modules = arrayOf(
+        AndroidSupportInjectionModule::class,
+        ActivityBinder::class,
+        ApiModule::class,
+        LocalModule::class,
+        DriverModule::class
+        ))
 interface AppComponent : AndroidInjector<GwangjuApplication> {
     @Component.Builder
     interface Builder{
