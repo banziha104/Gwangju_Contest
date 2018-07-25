@@ -29,7 +29,8 @@ class SplashActivity : DaggerAppCompatActivity(), AnkoLogger {
                 .getWeather("37.453973", "127.127015")
                 .subscribe({
                     viewModel.weatherDriver.onNext(it)
-                    info { viewModel.rentModel }
+                    info { viewModel.storageModel }
+                    info { viewModel.storageModel.items.size}
                 }, { it.printStackTrace() })
     }
 }
