@@ -1,5 +1,8 @@
 package com.nicname.iyeongjun.gwangju_contest.util
 
+import com.google.gson.Gson
+import org.json.XML
+
 fun String.getLimitedString( length: Int): String {
     var result = ""
     val arr = this.split("")
@@ -23,4 +26,9 @@ fun String?.setNull() : String{
     }else{
         return this
     }
+}
+
+fun <T> String.xmlToJson(cla : Class<T>) : Class<T>{
+    val str = XML.toString(this)
+    return Gson().fromJson(str,cla::class.java)
 }
