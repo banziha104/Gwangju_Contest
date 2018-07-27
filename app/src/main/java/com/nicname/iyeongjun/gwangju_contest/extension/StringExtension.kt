@@ -1,6 +1,7 @@
-package com.nicname.iyeongjun.gwangju_contest.util
+package com.nicname.iyeongjun.gwangju_contest.extension
 
 import com.google.gson.Gson
+import com.nicname.iyeongjun.gwangju_contest.api.model.rent.RentModel
 import org.json.XML
 
 fun String.getLimitedString( length: Int): String {
@@ -26,9 +27,11 @@ fun String?.setNull() : String{
     }else{
         return this
     }
+//    val a = "".xmlToJson(RentModel::class.java)
+    Gson().fromJson("",RentModel::class.java)
 }
 
-fun <T> String.xmlToJson(cla : Class<T>) : Class<T>{
+fun <T> String.xmlToJson(cla : Class<T>) : T{
     val str = XML.toString(this)
-    return Gson().fromJson(str,cla::class.java)
+    return Gson().fromJson(str,cla)
 }

@@ -1,4 +1,4 @@
-package com.nicname.iyeongjun.gwangju_contest.util
+package com.nicname.iyeongjun.gwangju_contest.extension
 //
 //import com.example.iyeongjun.gucknaesan.api.model.mount.Item
 //import com.example.iyeongjun.gucknaesan.api.model.mount.MountModel

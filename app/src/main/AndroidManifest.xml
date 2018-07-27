@@ -3,7 +3,7 @@
     package="com.nicname.iyeongjun.gwangju_contest">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <application
         android:name=".GwangjuApplication"
         android:allowBackup="true"

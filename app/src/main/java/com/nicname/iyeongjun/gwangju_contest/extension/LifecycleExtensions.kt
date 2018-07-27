@@ -1,4 +1,4 @@
-package com.nicname.iyeongjun.gwangju_contest.util
+package com.nicname.iyeongjun.gwangju_contest.extension
 
 import android.arch.lifecycle.Lifecycle
 import android.arch.lifecycle.LifecycleObserver
