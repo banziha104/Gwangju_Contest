@@ -1,4 +1,4 @@
-package com.nicname.iyeongjun.gwangju_contest.util
+package com.nicname.iyeongjun.gwangju_contest.extension
 
 import com.nicname.iyeongjun.gwangju_contest.rx.AutoClearedDisposable
 import io.reactivex.Completable
