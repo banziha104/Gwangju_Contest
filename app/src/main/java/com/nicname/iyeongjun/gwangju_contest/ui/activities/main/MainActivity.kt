@@ -29,7 +29,7 @@ class MainActivity : DaggerAppCompatActivity(),AnkoLogger {
     lateinit var viewModel : MainViewModel
     val disposable = AutoClearedDisposable(this)
     val viewDisposables = AutoClearedDisposable(lifecycleOwner = this,alwaysClearOnStop = false)
-    val tabNames = arrayOf("대여소", "라이딩", "관광정보")
+    val tabNames = arrayOf("보관소","대여소","라이딩","날씨","관광")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,7 +40,7 @@ class MainActivity : DaggerAppCompatActivity(),AnkoLogger {
     }
     private fun bind(list : List<Fragment>) {
         mainViewpager.adapter = MainPagerAdapter(supportFragmentManager, list)
-        for (i in 0..2) tab.addTab(tab.newTab().setText(tabNames[i]))
+        for (i in 0..4) tab.addTab(tab.newTab().setText(tabNames[i]))
         mainViewpager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tab))
         tab.addOnTabSelectedListener(TabLayout.ViewPagerOnTabSelectedListener(mainViewpager))
         tab.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {

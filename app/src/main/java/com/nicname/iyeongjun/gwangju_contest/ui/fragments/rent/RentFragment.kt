@@ -53,23 +53,8 @@ class RentFragment : DaggerFragment(), OnMapReadyCallback, AnkoLogger {
     override fun onMapReady(map: GoogleMap?) {
 //        eventDriver.subscribe {
             if (flag == RENT_MODE) {
-                map?.clear()
                 val location = LatLng(35.161683, 126.872869)
                 map?.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 14.5f))
-                for (i in viewModel.storageModel.items) {
-                    try {
-                        val tempLocation = LatLng(i.lat.toDouble(), i.lan.toDouble())
-                        val maker = MarkerOptions()
-                                .position(tempLocation)
-                                .title(i.name)
-                        map?.addMarker(maker)
-                    } catch (e: Exception) {
-                        e.printStackTrace()
-                    }
-                }
-            } else {
-                map?.clear()
-                info { viewModel.rentModel.items.size }
                 for (i in viewModel.rentModel.items) {
                     val tempLocation = LatLng(i.lat.toDouble(), i.lon.toDouble())
                     val maker = MarkerOptions()
@@ -77,14 +62,13 @@ class RentFragment : DaggerFragment(), OnMapReadyCallback, AnkoLogger {
                             .title(i.name)
                     map?.addMarker(maker)
                 }
-//            }
+            }
         }
-    }
+
 
     override fun onResume() {
         super.onResume()
         map?.onResume()
-        button.setOnClickListener { eventDriver.onNext(!flag) }
     }
 
     override fun onDestroy() {
