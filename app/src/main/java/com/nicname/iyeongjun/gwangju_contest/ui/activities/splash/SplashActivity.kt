@@ -24,14 +24,12 @@ class SplashActivity : DaggerAppCompatActivity(), AnkoLogger, PermissionControll
     lateinit var viewModel: SplashViewModel
     val disposable = AutoClearedDisposable(this)
     val viewDisposables = AutoClearedDisposable(lifecycleOwner = this, alwaysClearOnStop = false)
-    var permissionController: PermissionController? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        permissionController = PermissionController(this,
+        PermissionController(this,
                 arrayOf(Manifest.permission.INTERNET,
-                        Manifest.permission.ACCESS_FINE_LOCATION))
-        permissionController?.checkVersion()
+                        Manifest.permission.ACCESS_FINE_LOCATION)).checkVersion()
     }
 
     override fun init() {
@@ -52,8 +50,9 @@ class SplashActivity : DaggerAppCompatActivity(), AnkoLogger, PermissionControll
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == REQ_PERMISSION) {
-            if (permissionController!!.onCheckResult(grantResults)) {
+        if (requestCode == PermissionController.REQ_FLAG) {
+            if (PermissionController.onCheckResult(grantResults)) {
+                info { "사용자 확정" }
                 init()
             } else {
                 Toast.makeText(this, "권한을 허용하지 않으시면 프로그램을 실행할 수 없습니다.", Toast.LENGTH_LONG).show()
