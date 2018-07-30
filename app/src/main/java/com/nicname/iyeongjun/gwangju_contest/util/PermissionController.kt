@@ -11,7 +11,20 @@ import org.jetbrains.anko.info
 class PermissionController(val activity: AppCompatActivity, val permissions: Array<String>) : AnkoLogger {
 
     companion object {
-        private val REQ_FLAG  = 10005
+        val REQ_FLAG  = 10005
+
+        fun onCheckResult(grantResults: IntArray): Boolean {
+            var checkResult = true
+            // 권한처리 결과값을 반복문을 돌면서 확인한 후 하나라도 승인되지 않았다면 false를 리턴해준다
+            for (result in grantResults) {
+                if (result != PackageManager.PERMISSION_GRANTED) {
+                    checkResult = false
+                    break
+                }
+            }
+            return checkResult
+        }
+
     }
 
     fun checkVersion() {
@@ -56,18 +69,6 @@ class PermissionController(val activity: AppCompatActivity, val permissions: Arr
             info { 8 }
             throw RuntimeException("must implement this.CallBack")
         }
-    }
-
-    fun onCheckResult(grantResults: IntArray): Boolean {
-        var checkResult = true
-        // 권한처리 결과값을 반복문을 돌면서 확인한 후 하나라도 승인되지 않았다면 false를 리턴해준다
-        for (result in grantResults) {
-            if (result != PackageManager.PERMISSION_GRANTED) {
-                checkResult = false
-                break
-            }
-        }
-        return checkResult
     }
 
     interface CallBack{
