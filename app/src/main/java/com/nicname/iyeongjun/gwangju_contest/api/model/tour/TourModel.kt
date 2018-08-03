@@ -6,73 +6,73 @@ import org.simpleframework.xml.Root
 
 @Root
 class TourModel {
-    @Element
+    @get:Element
     var header: HeaderBean? = null
-    @Element
+    @get:Element
     var body: BodyBean? = null
 
     @Root
     class HeaderBean {
-        @Element
+        @get:Element
         var resultCode: String? = null
-        @Element
+        @get:Element
         var resultMsg: String? = null
     }
 
     @Root
     class BodyBean {
-        @Element
+        @get:Element
         var numOfRows: String? = null
-        @Element
+        @get:Element
         var pageNo: String? = null
-        @Element
+        @get:Element
         var totalCount: String? = null
-        @ElementList
+        @get:ElementList
         var items: List<ItemBean>? = null
 
         @Root
         class ItemBean {
-            @Element(required = false)
+            @get:Element(required = false)
             var addr1: String? = null
-            @Element(required = false)
+            @get:Element(required = false)
             var addr2: String? = null
-            @Element(required = false)
+            @get:Element(required = false)
             var areacode: String? = null
-            @Element(required = false)
+            @get:Element(required = false)
             var cat1: String? = null
-            @Element(required = false)
+            @get:Element(required = false)
             var cat2: String? = null
-            @Element(required = false)
+            @get:Element(required = false)
             var cat3: String? = null
-            @Element(required = false)
+            @get:Element(required = false)
             var contentid: String? = null
-            @Element(required = false)
+            @get:Element(required = false)
             var contenttypeid: String? = null
-            @Element(required = false)
+            @get:Element(required = false)
             var createdtime: String? = null
-            @Element(required = false)
+            @get:Element(required = false)
             var dist: String? = null
-            @Element(required = false)
+            @get:Element(required = false)
             var firstimage: String? = null
-            @Element(required = false)
+            @get:Element(required = false)
             var firstimage2: String? = null
-            @Element(required = false)
+            @get:Element(required = false)
             var mapx: String? = null
-            @Element(required = false)
+            @get:Element(required = false)
             var mapy: String? = null
-            @Element(required = false)
+            @get:Element(required = false)
             var mlevel: String? = null
-            @Element(required = false)
+            @get:Element(required = false)
             var modifiedtime: String? = null
-            @Element(required = false)
+            @get:Element(required = false)
             var readcount: String? = null
-            @Element(required = false)
+            @get:Element(required = false)
             var sigungucode: String? = null
-            @Element(required = false)
+            @get:Element(required = false)
             var tel: String? = null
-            @Element(required = false)
+            @get:Element(required = false)
             var title: String? = null
-            @Element(required = false)
+            @get:Element(required = false)
             var booktour: String? = null
         }
     }
