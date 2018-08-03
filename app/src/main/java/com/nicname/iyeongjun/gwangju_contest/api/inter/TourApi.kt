@@ -20,5 +20,5 @@ interface TourApi{
             @Query("mapX") lon : Double = 126.872869,
             @Query("mapY") lat : Double = 35.161683,
             @Query("radius") radius : Int = 50000
-    ) : Observable<TourModel2>
+    ) : Observable<TourModel>
 }
