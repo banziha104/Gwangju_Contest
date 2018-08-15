@@ -24,6 +24,4 @@ class TourFragment : DaggerFragment() {
 
         return inflater.inflate(R.layout.fragment_tour, container, false)
     }
-
-
 }
