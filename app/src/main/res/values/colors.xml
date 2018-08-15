@@ -3,4 +3,11 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+<<<<<<< HEAD
+=======
+    <color name="colorGray">#E2E2E2</color>
+    <color name="colorBlue">#4a90e2</color>
+    <color name="colorBack">#f0f0f0</color>
+    <color name="colorBlackTint">#55000000</color>
+>>>>>>> add AR
 </resources>
