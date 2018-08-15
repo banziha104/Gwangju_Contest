@@ -42,7 +42,11 @@ class StorageFragment : DaggerFragment(), OnMapReadyCallback,AnkoLogger {
     }
 
     override fun onMapReady(map: GoogleMap?) {
+<<<<<<< HEAD
         val location = LatLng(35.161683, 126.872869)
+=======
+        val location = LatLng(35.158829, 126.852053)
+>>>>>>> add AR
         map?.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 14.5f))
         for (i in viewModel.storageModel.items) {
             try {

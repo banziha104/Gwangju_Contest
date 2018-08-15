@@ -7,6 +7,11 @@ import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v4.app.Fragment
 import com.nicname.iyeongjun.gwangju_contest.R
+<<<<<<< HEAD
+=======
+import com.nicname.iyeongjun.gwangju_contest.R.id.mainViewpager
+import com.nicname.iyeongjun.gwangju_contest.R.id.tab
+>>>>>>> add AR
 import com.nicname.iyeongjun.gwangju_contest.api.inter.WeatherApi
 import com.nicname.iyeongjun.gwangju_contest.const.T_BASE_URL
 import com.nicname.iyeongjun.gwangju_contest.extension.plusAssign
@@ -38,6 +43,10 @@ class MainActivity : DaggerAppCompatActivity(),AnkoLogger {
         viewModel = ViewModelProviders.of(this, viewModelFactory)[MainViewModel::class.java]
         bind(viewModel.getFragments())
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> add AR
     private fun bind(list : List<Fragment>) {
         mainViewpager.adapter = MainPagerAdapter(supportFragmentManager, list)
         for (i in 0..4) tab.addTab(tab.newTab().setText(tabNames[i]))

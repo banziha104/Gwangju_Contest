@@ -4,6 +4,10 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+<<<<<<< HEAD
+=======
+    <uses-permission android:name="android.permission.CAMERA"/>
+>>>>>>> add AR
     <application
         android:name=".GwangjuApplication"
         android:allowBackup="true"
@@ -26,6 +30,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
+=======
+        <activity android:name=".util.ar.ARActivity"></activity>
+>>>>>>> add AR
     </application>
 
 </manifest>

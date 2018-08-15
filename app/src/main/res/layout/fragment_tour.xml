@@ -1,14 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+=======
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+>>>>>>> add AR
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragments.tour.TourFragment">
 
     <!-- TODO: Update blank fragment layout -->
+<<<<<<< HEAD
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/hello_blank_fragment" />
 
 </FrameLayout>
+=======
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/tourRecycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorBack"
+        android:paddingTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tourTab"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tourTab"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:background="@drawable/tab_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabIndicatorColor="@color/browser_actions_title_color"></android.support.design.widget.TabLayout>
+
+</android.support.constraint.ConstraintLayout>
+>>>>>>> add AR

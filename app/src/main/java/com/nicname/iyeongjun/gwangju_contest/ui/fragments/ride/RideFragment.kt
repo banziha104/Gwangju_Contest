@@ -25,5 +25,8 @@ class RideFragment : DaggerFragment() {
 
         return inflater.inflate(R.layout.fragment_ride, container, false)
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> add AR
 }
