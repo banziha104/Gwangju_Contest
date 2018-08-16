@@ -7,6 +7,7 @@ import io.reactivex.Observable
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.HEAD
 import retrofit2.http.Query
 
 interface TourApi{
@@ -20,9 +21,5 @@ interface TourApi{
             @Query("mapX") lon : Double = 126.872869,
             @Query("mapY") lat : Double = 35.161683,
             @Query("radius") radius : Int = 50000
-<<<<<<< HEAD
-    ) : Observable<TourModel>
-=======
     ) : Observable<TourModel2>
->>>>>>> add AR
 }

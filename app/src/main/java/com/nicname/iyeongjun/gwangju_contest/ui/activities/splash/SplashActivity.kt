@@ -34,12 +34,8 @@ class SplashActivity : DaggerAppCompatActivity(), AnkoLogger, PermissionControll
         setContentView(R.layout.activity_splash)
         PermissionController(this,
                 arrayOf(Manifest.permission.INTERNET,
-<<<<<<< HEAD
-                        Manifest.permission.ACCESS_FINE_LOCATION)).checkVersion()
-=======
                         Manifest.permission.ACCESS_FINE_LOCATION,
                         Manifest.permission.CAMERA)).checkVersion()
->>>>>>> add AR
     }
 
     override fun init() {
@@ -49,11 +45,7 @@ class SplashActivity : DaggerAppCompatActivity(), AnkoLogger, PermissionControll
         viewModel = ViewModelProviders.of(this, viewModelFactory)[SplashViewModel::class.java]
         viewDisposables += viewModel
                 .weatherApi
-<<<<<<< HEAD
-                .getWeather("35.166401", "126.843347")
-=======
                 .getWeather("35.158829", "126.852053")
->>>>>>> add AR
                 .subscribe({
                     viewModel.weatherDriver.onNext(it)
                     info { viewModel.storageModel }
