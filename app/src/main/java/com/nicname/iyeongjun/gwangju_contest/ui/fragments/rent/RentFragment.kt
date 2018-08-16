@@ -9,6 +9,7 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.nicname.iyeongjun.gwangju_contest.R
@@ -56,17 +57,7 @@ class RentFragment : DaggerFragment(), OnMapReadyCallback, AnkoLogger {
                 val maker = MarkerOptions()
                         .position(tempLocation)
                         .title(i.name)
-                map?.addMarker(maker)
-            }
-        }
-        if (flag == RENT_MODE) {
-            val location = LatLng(35.161683, 126.872869)
-            map?.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 14.5f))
-            for (i in viewModel.rentModel.items) {
-                val tempLocation = LatLng(i.lat.toDouble(), i.lon.toDouble())
-                val maker = MarkerOptions()
-                        .position(tempLocation)
-                        .title(i.name)
+                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.rent_pin))
                 map?.addMarker(maker)
             }
         }
