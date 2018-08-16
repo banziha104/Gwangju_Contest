@@ -1,40 +1,20 @@
 package com.nicname.iyeongjun.gwangju_contest.ui.fragments.weather
 
-<<<<<<< HEAD
-import android.content.Context
-import android.net.Uri
-import android.os.Bundle
-import android.support.v4.app.Fragment
-=======
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
->>>>>>> add AR
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
 import com.nicname.iyeongjun.gwangju_contest.R
-<<<<<<< HEAD
-
-class WeatherFragment : Fragment() {
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_weather, container, false)
-    }
-
-
-=======
-import com.nicname.iyeongjun.gwangju_contest.R.id.txtWeatherAver
-import com.nicname.iyeongjun.gwangju_contest.R.id.txtWeatherMinmax
 import com.nicname.iyeongjun.gwangju_contest.adapter.recycler.WeatherAdapter
 import dagger.android.support.DaggerFragment
 import io.reactivex.android.schedulers.AndroidSchedulers
 import kotlinx.android.synthetic.main.fragment_weather.*
 import org.jetbrains.anko.AnkoLogger
 import javax.inject.Inject
+
+
 
 class WeatherFragment : DaggerFragment(), AnkoLogger {
 
@@ -64,5 +44,4 @@ class WeatherFragment : DaggerFragment(), AnkoLogger {
             layoutManager = LinearLayoutManager(activity!!)
         }
     }
->>>>>>> add AR
 }

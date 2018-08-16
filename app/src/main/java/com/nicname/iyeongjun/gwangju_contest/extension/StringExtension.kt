@@ -1,12 +1,10 @@
 package com.nicname.iyeongjun.gwangju_contest.extension
 
-<<<<<<< HEAD
-=======
 import android.util.Log
->>>>>>> add AR
 import com.google.gson.Gson
 import com.nicname.iyeongjun.gwangju_contest.api.model.rent.RentModel
 import org.json.XML
+
 
 fun String.getLimitedString( length: Int): String {
     var result = ""
@@ -32,14 +30,13 @@ fun String?.setNull() : String{
         return this
     }
 //    val a = "".xmlToJson(RentModel::class.java)
-    Gson().fromJson("",RentModel::class.java)
+    Gson().fromJson("", RentModel::class.java)
 }
 
 fun <T> String.xmlToJson(cla : Class<T>) : T{
     val str = XML.toString(this)
     return Gson().fromJson(str,cla)
-<<<<<<< HEAD
-=======
+
 }
 fun String.convertType(): String {
     val TOUR = 12
@@ -137,6 +134,4 @@ fun String.getProvince() : String{
     }
     Log.d("temp", "$this /")
     return result
-
->>>>>>> add AR
 }
