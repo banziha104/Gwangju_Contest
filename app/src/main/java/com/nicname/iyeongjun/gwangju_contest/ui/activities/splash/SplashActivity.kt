@@ -3,6 +3,7 @@ package com.nicname.iyeongjun.gwangju_contest.ui.activities.splash
 import android.Manifest
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.os.Handler
 import android.support.v4.content.PermissionChecker
 import com.nicname.iyeongjun.gwangju_contest.R
 import com.nicname.iyeongjun.gwangju_contest.rx.AutoClearedDisposable
@@ -15,12 +16,18 @@ import org.jetbrains.anko.info
 import org.jetbrains.anko.startActivity
 import javax.inject.Inject
 import android.widget.Toast
+import com.nicname.iyeongjun.gwangju_contest.const.T_MAP_KEY
+import com.skt.Tmap.TMapTapi
+import com.yqritc.scalablevideoview.ScalableType
+import kotlinx.android.synthetic.main.activity_splash.*
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.ResponseBody
 import org.json.XML
 import retrofit2.Response
 
+
+var tmapApi : TMapTapi? = null
 
 class SplashActivity : DaggerAppCompatActivity(), AnkoLogger, PermissionController.CallBack {
     private val REQ_PERMISSION = 100 // 권한요청코드
@@ -36,13 +43,24 @@ class SplashActivity : DaggerAppCompatActivity(), AnkoLogger, PermissionControll
                 arrayOf(Manifest.permission.INTERNET,
                         Manifest.permission.ACCESS_FINE_LOCATION,
                         Manifest.permission.CAMERA)).checkVersion()
+        tmapApi = TMapTapi(this)
+        tmapApi!!.setSKTMapAuthentication(T_MAP_KEY)
     }
 
+    override fun onBackPressed() {
+
+    }
     override fun init() {
         info { "init 스타트" }
         lifecycle += disposable
         lifecycle += viewDisposables
         viewModel = ViewModelProviders.of(this, viewModelFactory)[SplashViewModel::class.java]
+        videoView.setRawData(R.raw.gbike_splash)
+        videoView.requestFocus()
+        videoView.setScalableType(ScalableType.FIT_XY)
+        videoView.prepareAsync {
+            it.start()
+        }
         viewDisposables += viewModel
                 .weatherApi
                 .getWeather("35.158829", "126.852053")
@@ -50,9 +68,12 @@ class SplashActivity : DaggerAppCompatActivity(), AnkoLogger, PermissionControll
                     viewModel.weatherDriver.onNext(it)
                     info { viewModel.storageModel }
                     info { viewModel.storageModel.items.size }
-                    startActivity<MainActivity>()
                 }, { it.printStackTrace() })
-
+        val hd = Handler()
+        hd.postDelayed({
+            startActivity<MainActivity>()
+            finish()
+        },3000)
         viewDisposables += viewModel
                 .tourApi
                 .getTourData()
