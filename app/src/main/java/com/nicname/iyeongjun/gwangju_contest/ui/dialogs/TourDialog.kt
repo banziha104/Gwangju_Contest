@@ -7,6 +7,7 @@ import android.view.View
 import android.view.Window
 import com.nicname.iyeongjun.gwangju_contest.GlideApp
 import com.nicname.iyeongjun.gwangju_contest.R
+import com.nicname.iyeongjun.gwangju_contest.R.id.*
 import com.nicname.iyeongjun.gwangju_contest.api.model.tour.TourModel2
 import com.nicname.iyeongjun.gwangju_contest.extension.convertType
 import com.nicname.iyeongjun.gwangju_contest.extension.getTourToDate

@@ -63,8 +63,6 @@ class RentFragment : DaggerFragment(), OnMapReadyCallback, AnkoLogger {
         }
     }
 
-
-
     override fun onResume() {
         super.onResume()
         map?.onResume()
