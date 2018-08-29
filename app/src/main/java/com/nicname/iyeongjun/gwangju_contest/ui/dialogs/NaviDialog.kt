@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import android.view.Window
 import com.nicname.iyeongjun.gwangju_contest.R
+import com.nicname.iyeongjun.gwangju_contest.R.id.*
 import com.nicname.iyeongjun.gwangju_contest.adapter.recycler.NaviAdapter
 import com.skt.Tmap.TMapData
 import kotlinx.android.synthetic.main.dialog_navi.*
@@ -24,11 +25,6 @@ class NaviDialog(var activity: Activity?) : Dialog(activity), View.OnClickListen
         btnNavi.setOnClickListener {
 
         }
-//        editNavi.textChanges().subscribe({
-
-//        },{
-//            it.printStackTrace()
-//        })
 
         btnNavi.setOnClickListener {view ->
             data.findAddressPOI(h.text.toString()){
@@ -43,9 +39,6 @@ class NaviDialog(var activity: Activity?) : Dialog(activity), View.OnClickListen
                 info { "${h.text} / ${it.size}" }
             }
         }
-
-
-
     }
 
     override fun onClick(v: View) {
